@@ -1,11 +1,9 @@
-import { movies } from "../../movies.js";
-
 const initialState = {
-  movies: movies,
+  favorites: [],
 };
 console.log(initialState);
 
-export const reducer = (state = initialState, action) => {
+const favReducer = (state = initialState, action) => {
   switch (action.type) {
     // case generalActions.changeTitle:
     //   return { ...state, title: action.payload };
@@ -26,3 +24,5 @@ export const reducer = (state = initialState, action) => {
       return state;
   }
 };
+
+export default favReducer;
