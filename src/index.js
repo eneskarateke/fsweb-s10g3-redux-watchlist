@@ -3,13 +3,20 @@ import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
-
+import { applyMiddleware, legacy_createStore as createStore } from "redux";
+import logger from "redux-logger";
 import { Provider } from "react-redux";
-import { store } from "./store/myStore";
-
 import { BrowserRouter } from "react-router-dom";
+import { composeWithDevTools } from "redux-devtools-extension";
+
+import reducer from "./reducer";
+const store = createStore(
+  reducer,
+  composeWithDevTools(applyMiddleware(logger))
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <Provider store={store}>
     <BrowserRouter>
