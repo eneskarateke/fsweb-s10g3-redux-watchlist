@@ -3,7 +3,6 @@ import { ADD_FAVORITE, REMOVE_FAVORITE } from "../actions/favActions.js";
 const initialState = {
   favorites: [],
 };
-console.log(initialState);
 
 const favReducer = (state = initialState, action) => {
   switch (action.type) {
