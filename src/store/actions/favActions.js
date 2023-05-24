@@ -6,6 +6,5 @@ export const addFavorite = (movie) => {
 };
 
 export const removeFavorite = (id) => {
-  console.log("favorites action id  -->", id);
   return { type: REMOVE_FAVORITE, payload: id };
 };
